@@ -23,7 +23,7 @@ malignant2 = blockImg(malignant_2);
 %reconstruct image
 B11 = reconstruct(b1_network_1, 32, b1_result_1);
 %display image from the network
-plotImage(B11);
+plotImage(B11, 'Benign1', 5);
 
 %% Benign Image 1 10x10 Network
 
@@ -32,7 +32,7 @@ plotImage(B11);
 %reconstruct image
 B12 = reconstruct(b1_network_2, 32, b1_result_2);
 %display image from the network
-plotImage(B12);
+plotImage(B12, 'Benign1', 10);
 
 %% Benign Image 1 25x25 Network
 
@@ -41,7 +41,7 @@ plotImage(B12);
 %reconstruct image
 B13 = reconstruct(b1_network_3, 32, b1_result_3);
 %display image from the network
-plotImage(B13);
+plotImage(B13, 'Benign1', 25);
 
 %% Benign image 2 5x5 Network
 
@@ -50,7 +50,7 @@ plotImage(B13);
 %reconstruct image
 B21 = reconstruct(b2_network_1, 32, b2_result_1);
 %display image from the network
-plotImage(B21);
+plotImage(B21, 'Benign2', 5);
 
 %% Benign Image 2 10x10 Network
 
@@ -59,7 +59,7 @@ plotImage(B21);
 %reconstruct image
 B22 = reconstruct(b2_network_2, 32, b2_result_2);
 %display image from the network
-plotImage(B22);
+plotImage(B22, 'Benign2', 10);
 
 %% Benign Image 2 25x25 Network
 
@@ -68,7 +68,7 @@ plotImage(B22);
 %reconstruct image
 B23 = reconstruct(b2_network_3, 32, b2_result_3);
 %display image from the network
-plotImage(B23);
+plotImage(B23, 'Benign2', 25);
 
 %% Malignant image 1 5x5 Network
 
@@ -77,7 +77,7 @@ plotImage(B23);
 %reconstruct image
 M11 = reconstruct(m1_network_1, 32, m1_result_1);
 %display image from the network
-plotImage(M11);
+plotImage(M11, 'Malignant1', 5);
 
 %% Malignant Image 1 10x10 Network
 
@@ -86,7 +86,7 @@ plotImage(M11);
 %reconstruct image
 M12 = reconstruct(m1_network_2, 32, m1_result_2);
 %display image from the network
-plotImage(M12);
+plotImage(M12, 'Malignant1', 10);
 
 %% Malignant Image 1 25x25 Network
 
@@ -95,7 +95,7 @@ plotImage(M12);
 %reconstruct image
 M13 = reconstruct(m1_network_3, 32, m1_result_3);
 %display image from the network
-plotImage(M13);
+plotImage(M13, 'Malignant1', 25);
 
 %% Malignant Image 2 5x5 Network
 
@@ -104,7 +104,7 @@ plotImage(M13);
 %reconstruct image
 M21 = reconstruct(m2_network_1, 32, m2_result_1);
 %display image from the network
-plotImage(M21);
+plotImage(M21, 'Malignant2', 5);
 
 %% Malignant Image 2 10x10 Network
 
@@ -113,13 +113,13 @@ plotImage(M21);
 %reconstruct image
 M22 = reconstruct(m2_network_2, 32, m2_result_2);
 %display image from the network
-plotImage(M22);
+plotImage(M22, 'Malignant2', 10);
 
 %% Malignant Image 2 25x25 Network
 
 %run neural network 
-[m2_result_3, m2_network_3] = somNetwork(10, malignant1);
+[m2_result_3, m2_network_3] = somNetwork(25, malignant1);
 %reconstruct image
 M23 = reconstruct(m2_network_3, 32, m2_result_3);
 %display image from the network
-plotImage(M23);
+plotImage(M23, 'Malignant2', 25);
