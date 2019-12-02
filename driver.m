@@ -24,10 +24,6 @@ malignant2 = blockImg(malignant_2);
 B11 = reconstruct(b1_network_1, 32, b1_result_1);
 %display original image and image from the network
 plotImage(benign_1, B11, 'Benign1', 5);
-%analysis
-ratio = B11 ./ double(benign_1);
-imshow(ratio);
-title('Compression Ratios');
 
 %% Benign Image 1 10x10 Network
 
@@ -104,7 +100,7 @@ plotImage(malignant_1, M13, 'Malignant1', 25);
 %% Malignant Image 2 5x5 Network
 
 %run neural network 
-[m2_result_1, m2_network_1] = somNetwork(5, malignant1);
+[m2_result_1, m2_network_1] = somNetwork(5, malignant2);
 %reconstruct image
 M21 = reconstruct(m2_network_1, 32, m2_result_1);
 %display image from the network
@@ -113,7 +109,7 @@ plotImage(malignant_2, M21, 'Malignant2', 5);
 %% Malignant Image 2 10x10 Network
 
 %run neural network 
-[m2_result_2, m2_network_2] = somNetwork(10, malignant1);
+[m2_result_2, m2_network_2] = somNetwork(10, malignant2);
 %reconstruct image
 M22 = reconstruct(m2_network_2, 32, m2_result_2);
 %display image from the network
@@ -122,8 +118,15 @@ plotImage(malignant_2, M22, 'Malignant2', 10);
 %% Malignant Image 2 25x25 Network
 
 %run neural network 
-[m2_result_3, m2_network_3] = somNetwork(25, malignant1);
+[m2_result_3, m2_network_3] = somNetwork(25, malignant2);
 %reconstruct image
 M23 = reconstruct(m2_network_3, 32, m2_result_3);
 %display image from the network
 plotImage(malignant_2, M23, 'Malignant2', 25);
+
+%% Compression ratio
+r1 = 25/1049600;
+r2 = 100/1049600;
+r3 = 625/1049600;
+plot([r1, r2, r3]);
+title('Compression Ratio');
